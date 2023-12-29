@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/swiper.min.css">
+  <title>水墨兰亭</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      margin: 0; /* 移除默认的 body 边距 */
+      padding: 0; /* 移除默认的 body 内边距 */
+    }
+
+    .container {
+      max-width: 1200px; /* 设置内容最大宽度 */
+      margin: 0 auto; /* 居中内容 */
+      padding: 0 20px; /* 左右边距 */
+      box-sizing: border-box; /* 边距和宽度计算方式 */
+      margin-top: 50px;
+    }
+    h1 {
+   vertical-align: sub;
+	 float: center;
+	 margin-top: 30px;
+	 font-size: 54px;
+	 text-transform: none;
+	 font-family: "华文行楷";
+	 font-weight: lighter;
+	 color: black;
+    }
+
+    .swiper-container {
+            width: 1150px;
+            height: 550px;
+        } 
+
+    .titles {
+      display: flex;
+      justify-content: space-between; /* 等间距排列 */
+      margin-top: 20px;
+      background-color:tan
+    }
+
+    h2 {
+      flex: 1;
+      margin: 5px;
+      cursor: pointer;
+      color: #333; /* 链接颜色，您可以根据需要调整 */
+    }
+    h3{
+      font-size:24px;
+      margin-bottom: -10px;
+    }
+    .content {
+      display: none;
+    }
+    .content.active {
+      display: block;
+    }
+
+   .hr{
+    size:2px;
+    color:#333;
+   }
+
+  #section1 div img {
+            width: 350px;
+            height: 370px;
+            float: left;
+            margin-right: 20px; /* 可以根据需要调整图片和文字之间的间距 */
+            margin-left: 50px;
+        }
+        #section1 div p {
+            margin-top: 40px;
+            font-size: 24px;
+            text-align: left;
+            text-indent: 2em;
+        }
+   
+  #section1 div li{
+    list-style-type: none;
+  }
+
+  #section2 div img{
+    width: 350px;
+    height: 350px;
+    float: left;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 50px;
+  }
+
+  #section2 div p{
+    margin-top: 20px;
+     font-size: 24px;
+    text-align: left;
+    text-indent: 2em;
+  }
+
+#section3 div p{
+  margin-top: 40px;
+  font-size: 24px;
+  text-align: left;
+  text-indent: 2em;
+}
+  #frame                                    
+{
+    width:960px;
+    height:540px;
+    margin-top:20px;
+    margin-left: 100px;
+    overflow: hidden;
+    position: relative;
+   /* border:1px solid darkorchid;*/
+}
+#frame .photos                           
+{
+    width:6000px;
+    height:540px;
+    animation: move 10s ease infinite; 
+}       
+#frame .photos img
+{
+    width:960px;
+    height:540px;
+    float:left;                         
+}
+@keyframes move
+{
+    0%, 15% {margin-left: 0;}
+    15%, 30% {margin-left: -960px;}
+    30%, 45% {margin-left: -1920px;}
+    45%, 60% {margin-left: -2880px;}
+    60%, 80%{margin-left:-3480px;}
+    80%, 100%{margin-left: -4800px;}
+}
+#footer {
+	text-align: center;
+	vertical-align: middle;
+	height: 100px;
+	padding-top: 20px;
+	color: #FFF;
+	background-color: #333;
+}
+audio {
+            display: none; /* 隐藏默认的音频控件 */
+        }
+  </style>
+</head>
+<body>
+  <h1>水墨兰亭</h1>
+  <div class="container">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="文征明《兰亭修禊图》.jpeg" width="1150"height="550"/>
+          </div>
+          <div class="swiper-slide"> <img src="宴饮流觞图.png" width="1150"height="550"></div>
+          <div class="swiper-slide"><img src="冯承素版.jpg" width="1150"height="550"></div>
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+      
+      <!-- 如果需要导航按钮 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+  </div>
+  <script src="./js/swiper.min.js"></script>
+  <script>        
+      var mySwiper = new Swiper ('.swiper-container', {
+        direction: 'horizontal', // 垂直切换选项
+        loop: true, // 循环模式选项
+        
+        // 如果需要分页器
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        
+        // 如果需要前进后退按钮
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      })        
+      </script>
+    <div class="titles">
+      <h2 onclick="showContent('section1')">作者简介</h2>
+      <h2 onclick="showContent('section2')">细节赏析</h2>
+      <h2 onclick="showContent('section3')">重返兰亭</h2>
+    </div>
+    <hr>
+
+    <div id="section1" class="content">
+      <div>
+      <img src="王羲之.jpg" alt="王羲之">
+        <p>王羲之字逸少，东晋时期著名书法家，有“书圣”之称。琅琊（今属山东临沂）人，后迁会稽山阴（今浙江绍兴），晚年隐居剡县金庭。</p>
+        <p>王羲之历任秘书郞、宁远将军、江州刺史，后为会稽内史，领右将军。其书法兼善隶、草、楷、行各体，精研体势，心摹手追，广采众长，备精诸体，冶于一炉，摆脱了汉魏笔风，自成一家，影响深远。风格平和自然，笔势委婉含蓄，遒美健秀。</p>
+        <p>王羲之所写的书法，楷书以《黄庭经》《乐毅论》等最有名，行书以《快雪时晴帖》《丧乱帖》最出色，草书则以《十七帖》最传神，代表作《兰亭集序》更是被誉为“天下第一行书”。</p>
+    </div>
+    <hr>
+    <div>
+      <ul>
+        <li><h2>书成换鹅</h2></li>
+        <p>王羲之很喜欢鹅，他认为养鹅不仅能陶冶情操，还能从观察鹅的动作形态中悟到一些书法理论。有一次王羲之出外游玩，看到一群很漂亮的白鹅，便想买下，一问之下知道这些鹅是附近一个道士养的，便找到那个道士想与他商量买下那群鹅。那个道士听说大名鼎鼎的王羲之要买，便说：只要王右军能为我抄一部《黄庭经》，便将拿些鹅送给他。王羲之欣然答应，这便成就了书成换白鹅的佳话。</p>
+        <hr>
+        <li><h2>入木三分</h2></li>
+        <p>晋帝当时要到北郊去祭祀，让王羲之把祝词写在一块木板上，再派工人雕刻。刻字者把木板削了一层又一层，发现王羲之的书法墨迹一直印到木板里面去了，他削进三分深度，才见底。木工惊叹王羲之的笔力雄劲，书法技艺炉火纯青，笔锋力度竟能入木三分。
+        </p>
+        <hr>
+        <li><h2>坦腹东床</h2></li>
+        <p>郗鉴的心腹管家带重礼到王导家择婿，王府子弟都精心准备来迎接，只有王羲之在躺在东床上坦腹仰卧，无动于衷。管家回去后将此事告诉郗鉴，郗鉴说：“我要选的就是这样的人，走，快领我去看。”郗鉴来到王府，见王羲之才貌双全，既豁达又文雅，当场下了聘礼，择为快婿。这就是“东床快婿”的由来。</p>
+        <hr>
+      </ul>
+   </div>
+    </div>
+    
+    <div id="section2" class="content">
+    <div>
+      <h2>尖峰入笔</h2>
+      <img src="之赏析.png" alt="之">
+      <p>王羲之用笔基本上都是侧锋入纸，然后扭转为中锋，或者就是直接用侧锋。但是不论是中锋还是侧锋，有个显著的特点就是：尖锋。每一个字的起始笔画都是尖锋入笔，然后转侧锋或是中锋，这样有利于下一个笔画的运笔，便于掌控整体走势。我们可以欣赏旁边的这些字，就可以看出尖锋入笔的妙处了。</p>
+      <p>像这样的“之”字，单单从外形上看也好不到哪里去，但为什么历代书法家如此推崇王羲之的书法呢，其中主要的原因就是迷恋的是王羲之这种游丝引带的感觉，顺畅无比的笔法。王羲之用过这一个字，就是在转折之处会迅速调锋，所以力道不会在转折处流失。这就是王羲之的字笔笔“入木三分”的秘密所在。</p>
+    <hr>
+    <h2>字中气韵</h2>
+    <img src="集.jpeg" alt="集">
+    <p>兰亭序之所以写得好是跟这个字中间的“气”有关。这个“气”是什么？就看这个“集”字。请看写字连在一起的，我们都看得出来，撇捺两笔是不连接的，但是王羲之写出来的好像有关联的两笔，王羲之的最后一捺那一笔也是翘起来的。一撇翻过来，一捺翘起来，这笔点就到位了。实际上这个字整体上就是一个生命的过程，字没停下来，字就是这样，这个就叫做“气”。有笔画之处即为“气”也。</p>
+    <p>更微妙的地方是字与字之间也关联，看从一笔到另一笔，其实也连在一起的。所以一篇字写下来感觉是一口气没断过。哪怕我呼吸一下，就像唱京剧的人，有些句子，顿一顿，一口气运出来以后，和上面是接下来的，这样才感觉到如星云流水气息通畅，这个就是王羲之字的“气”，从书法中看到了他的“气”。</p>
+    <hr>
+    <img src="会.jpeg" alt="会">
+    <p>“韵”是什么，有字的是黑的地方，留出来是什么？就是个白的地方。我们看这个“会”字，这个字周围空了很多地方，仔细看空的地方，其实是作者精心的平衡的。效果怎么来的？当时是念出来的，念了以后笔走黑处，心在白处，叫做“即黑当白”，所以白的地方的味道那就更强了，因为这是一个心中的气，这种感觉——画笔与留白互相之间连带着、展现出它自身的变化和牵连。</p>
+    <p>这股韵在哪里？气韵有的地方，留白好像里面的一个活的东西冲进去就回荡开来，回荡之间就是每一个留白之间的连接、激荡、冲突和遮蔽。有时留白被阻断，有时候留白又冲出来占据一片位置，这种开合之间，气韵的感觉就出来了。气韵生动，其实写行书也有气，只是写到行书的时候，气韵的生动就更为巨大。</p>
+    <hr>
+    <h2>真情流露</h2>
+    <img src="涂抹.png" alt="涂抹">
+    <p>兰亭集序上面有十几处涂抹修改的痕迹，为何还能被称之为天下第一行书呢。如文章最后一段“悲夫”和“文”处涂抹十分明显，与整篇文章的风格显得格格不入。但是欣赏作品时要结合当时的背景。</p>
+    <p>兰亭集序，是当天为兰亭诗集所作的序文，即兴而作，加上王羲之当时肯定饮了不少酒，自然会有涂抹修改。涂改是真实的、自然的、无意的，暴露了书写者的真实想法和漫无目的的书写意图。正是这些涂抹的痕迹将王羲之的书写状态和心理活动全方位的展现出来，对人生的感慨怅然之情也跃然于纸上。颜真卿的《祭侄文稿》更是全篇大涂大抹，其悲愤之情力透纸背，跃然纸上。因此后人在临摹时也不会刻意修改原作的涂抹痕迹，而是将它们原原本本的保留下来。</p>
+    </div>
+    <hr>
+    </div>
+    
+    <div id="section3" class="content">
+    <h2>兰亭风光</h2>
+      <div id="frame">
+        <div class="photos">
+             <img src="兰亭全景.jpg"height="540" width="960"/ >
+             <img src="兰亭碑亭.jpg" height="540" width="960"/>
+             <img src="右军祠.jpg" height="540" width="960"/>
+             <img src="曲水流觞.jpg" height="540" width="960"/>
+             <img src="流觞亭外景.jpg" height="540" width="960"/>
+             <img src="流觞亭.jpg" height="540" width="960"/>
+         </div>
+   </div>
+   <div>
+    <p>兰亭，地处绍兴城西南25华里的兰渚山下，与禹陵、东湖并立为绍兴市郊三大著名风景点之一。相传春秋时期越王勾践曾在此植兰，汉时设驿亭，故名兰亭。兰亭是东晋著名书法家，书圣王羲之的园林住所，是一座晋代园林，一直因书法名作《兰亭集序》而名闻海内外。</p>
+    <p>“此地有崇山峻岭，茂林修竹，又有清流激湍，映带左右”。兰亭四周浅溪淙淙，幽静雅致，十分符合古代修禊之礼对于自然地理环境的要求。园内著名景点有“鹅池”、“曲水流觞”、“兰亭碑”、“御碑亭”、“右军祠”、“流觞亭”等。其建筑精巧古朴，是不可多得的园林杰作。</p>
+   </div>
+   <hr>
+   <h3>当AI遇见兰亭集序</h3>
+   <video id="myVideo" width="960" height="600" controls>
+    <source src="兰亭朗读.mp4" type="video/mp4">
+</video>
+<div>
+  <p>本视频所有画面均为AI生成，力求通过AI作图还原兰亭集序中的场景。但是AI终究不能对文言文进行深刻透彻的理解，因此有些画面可能不是很贴合原文，敬请谅解。</p>
+</div>
+<hr>
+  </div>
+  <audio id="myAudio" autoplay loop>
+    <!-- 替换为你的音乐文件 -->
+    <source src="水墨兰亭.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById("myAudio");
+            var video = document.getElementById("myVideo");
+
+            // 在点击事件监听器中添加逻辑
+            document.addEventListener("click", function() {
+                // 如果视频正在播放，暂停音乐
+                if (!video.paused) {
+                    audio.pause();
+                } else {
+                    // 否则，检查浏览器是否支持自动播放音频
+                    var promise = audio.play();
+
+                    if (promise !== undefined) {
+                        promise.then(_ => {
+                            // Autoplay started
+                        }).catch(error => {
+                            // Autoplay was prevented
+                            console.error("Autoplay was prevented: ", error);
+                        });
+                    }
+                }
+            });
+
+            // 在视频播放时暂停音乐
+            video.addEventListener("play", function() {
+                audio.pause();
+            });
+        });
+
+   document.addEventListener('DOMContentLoaded', function() {
+    // 默认显示 section1 内容
+    showContent('section1');
+
+    // 获取所有的 section 元素
+    var sections = document.querySelectorAll('.section');
+
+    // 为每个 section 元素添加点击事件监听器
+    sections.forEach(function(section) {
+        section.addEventListener('click', function() {
+            // 获取被点击的 section 的 id
+            var sectionId = section.getAttribute('id');
+
+            // 显示被点击的 section 内容
+            showContent(sectionId);
+        });
+    });
+});
+
+function showContent(sectionId) {
+    // 隐藏所有内容
+    var contents = document.querySelectorAll('.content');
+    contents.forEach(function(content) {
+        content.classList.remove('active');
+    });
+
+    // 显示特定内容
+    var activeContent = document.getElementById(sectionId);
+    activeContent.classList.add('active');
+}
+
+    
+    document.addEventListener("DOMContentLoaded", function() {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    // Display the initial slide
+    showSlide(currentIndex);
+
+    // Click event to move to the next slide when clicking on an image
+    slides.forEach((slide, index) => {
+        slide.addEventListener('click', function() {
+            const previousIndex = currentIndex;
+            currentIndex = (index + 1) % totalSlides;
+
+            // Add classes to control transitions
+            slides[previousIndex].classList.remove('active');
+            slides[previousIndex].classList.add('previous');
+            
+            slides[currentIndex].classList.add('active');
+            slides[currentIndex].classList.remove('previous');
+        });
+    });
+
+    // Function to display the current slide
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.add('active');
+                slide.classList.remove('previous');
+            } else {
+                slide.classList.remove('active');
+                slide.classList.remove('previous');
+            }
+        });
+    }
+});
+  </script>
+<footer>
+  <div id="footer">
+	<p>小组成员：孙岩，张驰，智泓博</p>
+			<p>感谢您的观看</p>
+  </div>
+</footer>
+</body>
+</html>
